@@ -28,6 +28,7 @@ local blue_light     = '#b8bcf3'
 local yellow         = '#cfcfbf'
 local orange         = '#b4b4b4'
 local purple         = '#b9a3eb'
+local cyan_dark      = '#89bbdd'
 local cyan           = '#89ddff'
 local fg             = '#a6accd'
 local fg_light       = '#fbfbfb'
@@ -246,7 +247,6 @@ local lang_syntax = {
     rustStructure   = { fg = orange },
     rustTypedef     = { fg = orange },
 
-
     -- javascript polyglot (pangloss/vim-javascript)
     jsFunction            = { fg = cyan, gui = 'italic' },
     jsFuncName            = { fg = blue },
@@ -300,6 +300,12 @@ local lang_syntax = {
 
     htmlTag = { fg = cyan },
     htmlEndTag = { fg = cyan },
+
+    -- Go
+    goDeclaration = { fg = blue, gui = 'italic' },
+    goVar         = { fg = blue, gui = 'italic' },
+    goBuiltins    = { fg = cyan_dark },
+
 }
 
 for group, styles in pairs(lang_syntax) do
