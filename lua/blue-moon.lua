@@ -303,6 +303,7 @@ local lang_syntax = {
 
     -- Go
     goDeclaration = { fg = blue, gui = 'italic' },
+    goDeclType    = { fg = blue },
     goVar         = { fg = blue, gui = 'italic' },
     goBuiltins    = { fg = cyan_dark },
 
