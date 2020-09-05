@@ -6,6 +6,7 @@ A dark color scheme for Neovim derived from palenight and carbonight
 
 - This plugin works better with [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 - I don't want to bother with non true color and terminal colors because don't use a tty, i use the good old [alacritty](https://github.com/alacritty/alacritty)
+- This colorscheme also support [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## Installation
 Using [vim-plug](https://github.com/junegunn/vim-plug):

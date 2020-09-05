@@ -23,6 +23,7 @@ local grey           = '#8796b0'
 local red            = '#d06178'
 local heavy_red      = '#e61f44'
 local green          = '#b4c4b4'
+local green_high     = '#bcd9c4'
 local blue           = '#959dcb'
 local blue_light     = '#b8bcf3'
 local yellow         = '#cfcfbf'
@@ -204,6 +205,7 @@ local plugin_syntax = {
     TSFuncBuiltin          = { fg = purple },
     TSFuncMacro            = { fg = orange },
     TSParameter            = { fg = white },
+    TSParameterReference   = { fg = green_high },
     TSMethod               = { fg = blue_light },
     TSField                = { fg = blue_light },
     TSProperty             = { fg = blue_light },
