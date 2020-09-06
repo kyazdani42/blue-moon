@@ -20,6 +20,7 @@ local bg             = '#292d3e'
 local bg_light       = '#32374d'
 local bg_lighter     = '#444267'
 local grey           = '#8796b0'
+local grey_dark      = '#2c3347'
 local red            = '#d06178'
 local heavy_red      = '#e61f44'
 local green          = '#b4c4b4'
@@ -62,7 +63,7 @@ local editor_syntax = {
     CursorLineNr = { fg = fg },
     MatchParen   = { fg = cyan, gui = 'bold' },
     Normal       = { fg = fg_light, bg = bg_dark },
-    NormalFloat  = { bg = bg_darker },
+    NormalFloat  = { bg = grey_dark, fg = white },
     Pmenu        = { bg = bg_darker, fg = fg_light },
     PmenuSel     = { bg = cyan, fg = bg_lighter, gui = 'bold' },
     PmenuSbar    = { bg = bg_lighter },
@@ -126,7 +127,7 @@ end
 -- }}}
 
 -- Vim Default Code Syntax {{{
-            
+
 local code_syntax = {
     Comment        = { fg = fg_dark, gui = 'italic' },
     Constant       = { fg = cyan },
@@ -169,7 +170,7 @@ local code_syntax = {
     Underlined     = { gui = 'underline' },
     Error          = { fg = heavy_red },
     Todo           = { fg = purple, gui = 'bold' },
-  }
+}
 
 for group, styles in pairs(code_syntax) do
     highlight(group, styles)
@@ -266,7 +267,7 @@ local lang_syntax = {
     luaConstant       = { fg = orange },
 
     -- zsh.vim
-    zshTodo            = code_syntax.Todo, 
+    zshTodo            = code_syntax.Todo,
     zshComment         = code_syntax.Comment,
     zshPreProc         = code_syntax.PreProc,
     zshString          = code_syntax.String,
@@ -320,7 +321,6 @@ local lang_syntax = {
     jsObjectShorthandProp = { fg = fg_light },
     jsNull                = { fg = orange },
 
-    typescriptOperator          = { fg = cyan },
     typescriptAsyncFuncKeyword  = { fg = cyan, gui = 'italic' },
     typescriptCall              = { fg = fg_light },
     typescriptBraces            = { fg = cyan },
@@ -337,7 +337,7 @@ local lang_syntax = {
     typescriptStringMethod      = { fg = blue },
     typescriptTypeReference     = { fg = yellow },
     typescriptObjectLabel       = { fg = red },
-    typescriptParens            = { fg = fg_light }, 
+    typescriptParens            = { fg = fg_light },
     typescriptTypeBrackets      = { fg = cyan },
     typescriptXHRMethod         = { fg = blue },
     typescriptResponseProp      = { fg = blue },
