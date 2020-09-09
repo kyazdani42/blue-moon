@@ -189,7 +189,7 @@ local plugin_syntax = {
     diffAdded              = { fg = green },
     diffRemoved            = { fg = heavy_red },
 
-    -- TSError             = {},
+    TSError                = {},
     TSPunctDelimiter       = { fg = white },
     TSPunctBracket         = { fg = cyan_dark },
     TSPunctSpecial         = { fg = cyan },
@@ -203,6 +203,7 @@ local plugin_syntax = {
     TSBoolean              = { fg = orange },
     TSFloat                = { fg = orange },
     TSFunction             = { fg = blue_light },
+    TSKeywordFunction      = { fg = blue_light },
     TSFuncBuiltin          = { fg = purple },
     TSFuncMacro            = { fg = orange },
     TSParameter            = { fg = white },
