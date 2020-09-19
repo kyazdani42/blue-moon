@@ -222,6 +222,8 @@ local plugin_syntax = {
     TSTypeBuiltin          = { fg = orange },
     TSStructure            = { fg = orange },
     TSInclude              = { fg = cyan_dark },
+    TSTag                  = { fg = blue_light },
+    TSTagDelimiter         = { fg = cyan },
     -- TSAnnotation = {},
     TSVariable = { fg = fg_light },
     TSVariableBuiltin = { fg = orange },
