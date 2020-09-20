@@ -31,3 +31,5 @@ let g:lightline = { 'colorscheme': 'blue-moon' }
 ## Screenshot
 
 ![alt text](.github/rust.png?raw=true "rust vim")
+![alt text](.github/typescript.png?raw=true "typescript")
+![alt text](.github/lua-query.png?raw=true "lua query")
