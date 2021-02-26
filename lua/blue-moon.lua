@@ -46,6 +46,7 @@ local white          = '#ffffff'
 -- Editor Highlight Groups {{{
 
 local editor_syntax = {
+  ColorColumn  = { bg = bg_light },
   CursorLine   = { bg = bg },
   Cursor       = { fg = bg_dark, bg = yellow },
   Directory    = { fg = blue, gui = 'bold' },
