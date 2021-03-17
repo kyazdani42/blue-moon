@@ -67,7 +67,7 @@ local editor_syntax = {
   MatchParen   = { fg = cyan, gui = 'bold' },
   Normal       = { fg = fg_light, bg = bg_dark },
   NormalFloat  = { bg = grey_dark, fg = white },
-  Pmenu        = { bg = bg_darker, fg = fg_light },
+  Pmenu        = { bg = grey_dark, fg = fg_light },
   PmenuSel     = { bg = cyan, fg = bg_lighter, gui = 'bold' },
   PmenuSbar    = { bg = bg_lighter },
   PmenuThumb   = { bg = fg },
