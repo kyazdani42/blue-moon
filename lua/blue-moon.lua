@@ -24,6 +24,7 @@ local bg_lighter     = '#444267'
 local grey           = '#8796b0'
 local grey_dark      = '#353b52'
 local red            = '#d06178'
+local red_dimmed     = '#a05168'
 local heavy_red      = '#e61f44'
 local green          = '#b4c4b4'
 local green_high     = '#bcd9c4'
@@ -85,6 +86,50 @@ local editor_syntax = {
   VisualNOS    = { bg = hollow_lighter },
   WarningMsg   = { fg = yellow, gui = 'italic' },
   Whitespace   = { bg = yellow }, -- TODO: i don't know where this is
+
+  -- lsp
+  LspDiagnosticsDefaultError = { fg = red_dimmed },
+  LspDiagnosticsDefaultWarning = { fg = orange },
+  LspDiagnosticsDefaultInformation = { fg = yellow },
+  LspDiagnosticsDefaultHint = { fg = yellow },
+
+  LspDiagnosticsUnderlineError   = { gui = 'underline', sp = red },
+  LspDiagnosticsUnderlineWarning = { gui = 'underline', sp = yellow },
+  LspDiagnosticsUnderlineInformation = { gui = 'underline', sp = green_high },
+  LspDiagnosticsUnderlineHint = { gui = 'underline', sp = green },
+
+-- LspDiagnosticsFloatingError
+--   Used to color "Error" diagnostic messages in diagnostics float.
+--   See |vim.lsp.diagnostic.show_line_diagnostics()|
+
+-- LspDiagnosticsFloatingWarning
+--   Used to color "Warning" diagnostic messages in diagnostics float.
+--   See |vim.lsp.diagnostic.show_line_diagnostics()|
+
+-- LspDiagnosticsFloatingInformation
+--   Used to color "Information" diagnostic messages in diagnostics float.
+--   See |vim.lsp.diagnostic.show_line_diagnostics()|
+
+-- LspDiagnosticsFloatingHint
+--   Used to color "Hint" diagnostic messages in diagnostics float.
+--   See |vim.lsp.diagnostic.show_line_diagnostics()|
+
+-- LspDiagnosticsSignError
+--   Used for "Error" signs in sign column.
+--   See |vim.lsp.diagnostic.set_signs()|
+
+-- LspDiagnosticsSignWarning
+--   Used for "Warning" signs in sign column.
+--   See |vim.lsp.diagnostic.set_signs()|
+
+-- LspDiagnosticsSignInformation
+--   Used for "Information" signs in sign column.
+--   See |vim.lsp.diagnostic.set_signs()|
+
+-- LspDiagnosticsSignHint
+--   Used for "Hint" signs in sign column.
+--   See |vim.lsp.diagnostic.set_signs()|
+
 
   -- git highlighting
   gitcommitComment        = { fg = fg_dark, gui = 'italic' },
