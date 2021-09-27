@@ -88,48 +88,15 @@ local editor_syntax = {
   Whitespace   = { bg = yellow }, -- TODO: i don't know where this is
 
   -- lsp
-  LspDiagnosticsDefaultError = { fg = red_dimmed },
-  LspDiagnosticsDefaultWarning = { fg = orange },
-  LspDiagnosticsDefaultInformation = { fg = yellow },
-  LspDiagnosticsDefaultHint = { fg = yellow },
+  DiagnosticError = { fg = red_dimmed },
+  DiagnosticWarning = { fg = orange },
+  DiagnosticInfo = { fg = yellow },
+  DiagnosticHint = { fg = yellow },
 
-  LspDiagnosticsUnderlineError   = { gui = 'underline', sp = red },
-  LspDiagnosticsUnderlineWarning = { gui = 'underline', sp = yellow },
-  LspDiagnosticsUnderlineInformation = { gui = 'underline', sp = green_high },
-  LspDiagnosticsUnderlineHint = { gui = 'underline', sp = green },
-
--- LspDiagnosticsFloatingError
---   Used to color "Error" diagnostic messages in diagnostics float.
---   See |vim.lsp.diagnostic.show_line_diagnostics()|
-
--- LspDiagnosticsFloatingWarning
---   Used to color "Warning" diagnostic messages in diagnostics float.
---   See |vim.lsp.diagnostic.show_line_diagnostics()|
-
--- LspDiagnosticsFloatingInformation
---   Used to color "Information" diagnostic messages in diagnostics float.
---   See |vim.lsp.diagnostic.show_line_diagnostics()|
-
--- LspDiagnosticsFloatingHint
---   Used to color "Hint" diagnostic messages in diagnostics float.
---   See |vim.lsp.diagnostic.show_line_diagnostics()|
-
--- LspDiagnosticsSignError
---   Used for "Error" signs in sign column.
---   See |vim.lsp.diagnostic.set_signs()|
-
--- LspDiagnosticsSignWarning
---   Used for "Warning" signs in sign column.
---   See |vim.lsp.diagnostic.set_signs()|
-
--- LspDiagnosticsSignInformation
---   Used for "Information" signs in sign column.
---   See |vim.lsp.diagnostic.set_signs()|
-
--- LspDiagnosticsSignHint
---   Used for "Hint" signs in sign column.
---   See |vim.lsp.diagnostic.set_signs()|
-
+  DiagnosticUnderlineError   = { gui = 'underline', sp = red },
+  DiagnosticUnderlineWarn = { gui = 'underline', sp = yellow },
+  DiagnosticUnderlineInfo = { gui = 'underline', sp = green_high },
+  DiagnosticUnderlineHint = { gui = 'underline', sp = green },
 
   -- git highlighting
   gitcommitComment        = { fg = fg_dark, gui = 'italic' },
