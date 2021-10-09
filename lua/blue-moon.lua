@@ -16,7 +16,6 @@ local function highlight(group, styles)
   vim.api.nvim_command('highlight! '..group..' '..gui..' '..sp..' '..fg..' '..bg)
 end
 
-local bg_darker      = '#121622'
 local bg_dark        = '#1b1e2b'
 local bg             = '#292d3e'
 local bg_light       = '#32374d'
@@ -24,7 +23,7 @@ local bg_lighter     = '#444267'
 local grey           = '#8796b0'
 local grey_dark      = '#353b52'
 local red            = '#d06178'
-local red_dimmed     = '#a05168'
+-- local red_dimmed     = '#a05168'
 local heavy_red      = '#e61f44'
 local green          = '#b4c4b4'
 local green_high     = '#bcd9c4'
@@ -88,10 +87,10 @@ local editor_syntax = {
   Whitespace   = { bg = yellow }, -- TODO: i don't know where this is
 
   -- lsp
-  DiagnosticError = { fg = red_dimmed },
-  DiagnosticWarning = { fg = orange },
-  DiagnosticInfo = { fg = yellow },
-  DiagnosticHint = { fg = yellow },
+  DiagnosticError = { fg = red, gui = 'bold', bg = bg },
+  DiagnosticWarning = { fg = orange, gui ='bold', bg = bg },
+  DiagnosticInfo = { fg = yellow, gui = 'bold', bg = bg },
+  DiagnosticHint = { fg = yellow, gui = 'bold', bg = bg },
 
   DiagnosticUnderlineError   = { gui = 'underline', sp = red },
   DiagnosticUnderlineWarn = { gui = 'underline', sp = yellow },
@@ -244,122 +243,6 @@ local plugin_syntax = {
   -- TSTitle                = {},
   -- TSLiteral              = {},
   -- TSURI                  = {},
-}
-
--- }}}
-
--- Syntax Plugin And Language Highlight Groups {{{
-
-local lang_syntax = {
-  -- lua.vim
-  luaTable          = { fg = fg_light },
-  luaBraces         = { fg = cyan },
-  luaIn             = { fg = blue, gui = 'italic' },
-  -- lua polyglot (tbastos/vim-lua)
-  luaFunc           = { fg = blue_light },
-  luaFuncCall       = { fg = blue_light },
-  luaFuncName       = { fg = blue_light },
-  luaBuiltIn        = { fg = blue_light },
-  luaFuncTable      = { fg = blue, gui = 'italic' },
-  luaFuncId         = { fg = blue, gui = 'italic' },
-  luaLocal          = { fg = purple },
-  luaSpecialValue   = { fg = purple },
-  luaStatement      = { fg = purple },
-  luaFunction       = { fg = blue, gui = 'italic' },
-  luaCond           = { fg = blue, gui = 'italic' },
-  luaElse           = { fg = blue, gui = 'italic' },
-  luaOperator       = { fg = blue, gui = 'italic' },
-  luaSymbolOperator = { fg = cyan },
-  luaConstant       = { fg = orange },
-
-  -- zsh.vim
-  zshTodo            = code_syntax.Todo,
-  zshComment         = code_syntax.Comment,
-  zshPreProc         = code_syntax.PreProc,
-  zshString          = code_syntax.String,
-  zshStringDelimiter = { fg = cyan },
-  zshPrecommand      = { fg = blue },
-  zshKeyword         = code_syntax.Function,
-  zshCommands        = { fg = blue },
-  zshOptStart        = { fg = blue, gui = 'italic' },
-  zshOption          = { fg = cyan, gui = 'italic' },
-  zshNumber          = code_syntax.Number,
-  zshSubst           = { fg = yellow },
-  zshSubstDelim      = { fg = cyan },
-
-  -- rust polyglot (rust.vim)
-  rustKeyword     = { fg = orange },
-  rustFuncCall    = { fg = blue_light },
-  rustModPathSep  = { fg = cyan },
-  rustIdentifier  = { fg = fg_light },
-  rustFuncName    = { fg = blue },
-  rustSigil       = { fg = cyan },
-  rustMacro       = { fg = blue_light },
-  rustStorage     = { fg = orange },
-  rustModPath     = { fg = fg_light },
-  rustEnumVariant = { fg = fg_light },
-  rustStructure   = { fg = orange },
-  rustTypedef     = { fg = orange },
-
-  -- javascript polyglot (pangloss/vim-javascript)
-  jsFunction            = { fg = cyan, gui = 'italic' },
-  jsFuncName            = { fg = blue },
-  jsImport              = { fg = cyan, gui = 'italic' },
-  jsFrom                = { fg = cyan, gui = 'italic' },
-  jsStorageClass        = { fg = purple },
-  jsAsyncKeyword        = { fg = cyan, gui = 'italic' },
-  jsForAwait            = { fg = cyan, gui = 'italic' },
-  jsArrowFunction       = { fg = purple },
-  jsReturn              = { fg = purple },
-  jsFuncCall            = { fg = blue },
-  jsFuncBraces          = { fg = cyan },
-  jsExport              = { fg = cyan, gui = 'italic' },
-  jsGlobalObjects       = { fg = yellow },
-  jsxTagName            = { fg = red },
-  jsxComponentName      = { fg = yellow },
-  jsxAttrib             = { fg = purple },
-  jsxBraces             = { fg = cyan },
-  jsTemplateBraces      = { fg = cyan },
-  jsFuncParens          = { fg = cyan },
-  jsDestructuringBraces = { fg = cyan },
-  jsObjectBraces        = { fg = cyan },
-  jsObjectKey           = { fg = red },
-  jsObjectShorthandProp = { fg = fg_light },
-  jsNull                = { fg = orange },
-
-  typescriptAsyncFuncKeyword  = { fg = cyan, gui = 'italic' },
-  typescriptCall              = { fg = fg_light },
-  typescriptBraces            = { fg = cyan },
-  typescriptTemplateSB        = { fg = cyan },
-  typescriptTry               = { fg = cyan, gui = 'italic' },
-  typescriptExceptions        = { fg = cyan, gui = 'italic' },
-  typescriptOperator          = { fg = cyan, gui = 'italic' },
-  typescriptExport            = { fg = cyan, gui = 'italic' },
-  typescriptStatementKeyword  = { fg = cyan, gui = 'italic' },
-  typescriptImport            = { fg = cyan, gui = 'italic' },
-  typescriptArrowFunc         = { fg = purple },
-  typescriptArrowFuncArg      = { fg = fg_light },
-  typescriptArrayMethod       = { fg = blue },
-  typescriptStringMethod      = { fg = blue },
-  typescriptTypeReference     = { fg = yellow },
-  typescriptObjectLabel       = { fg = red },
-  typescriptParens            = { fg = fg_light },
-  typescriptTypeBrackets      = { fg = cyan },
-  typescriptXHRMethod         = { fg = blue },
-  typescriptResponseProp      = { fg = blue },
-  typescriptBOMLocationMethod = { fg = blue },
-  typescriptHeadersMethod     = { fg = blue },
-  typescriptVariable          = { fg = purple },
-
-  htmlTag = { fg = cyan },
-  htmlEndTag = { fg = cyan },
-
-  -- Go
-  goDeclaration = { fg = blue, gui = 'italic' },
-  goDeclType    = { fg = blue },
-  goVar         = { fg = blue, gui = 'italic' },
-  goBuiltins    = { fg = cyan_dark },
-
 }
 
 -- }}}
