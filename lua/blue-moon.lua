@@ -1,8 +1,6 @@
 -- vim:fdm=marker
--- Vim Color File
--- Name:       blue-moon.lua
--- Maintainer: https://github.com/kyazdani42
--- License:    The MIT License (MIT)
+
+local util = require'blue-moon.util'
 
 local M = {}
 
@@ -87,10 +85,10 @@ local editor_syntax = {
   Whitespace   = { bg = yellow }, -- TODO: i don't know where this is
 
   -- lsp
-  DiagnosticError = { fg = red, gui = 'bold', bg = bg },
-  DiagnosticWarning = { fg = orange, gui ='bold', bg = bg },
-  DiagnosticInfo = { fg = yellow, gui = 'bold', bg = bg },
-  DiagnosticHint = { fg = yellow, gui = 'bold', bg = bg },
+  DiagnosticError = { fg = red, gui = 'bold', bg = util.darken(red, 0.1) },
+  DiagnosticWarning = { fg = orange, gui ='bold', bg = util.darken(orange, 0.1) },
+  DiagnosticInfo = { fg = yellow, gui = 'bold', bg = util.darken(yellow, 0.1) },
+  DiagnosticHint = { fg = green, gui = 'bold', bg = util.darken(green, 0.1) },
 
   DiagnosticUnderlineError   = { gui = 'underline', sp = red },
   DiagnosticUnderlineWarn = { gui = 'underline', sp = yellow },
