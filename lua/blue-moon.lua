@@ -29,6 +29,7 @@ local blue           = '#959dcb'
 local blue_light     = '#b8bcf3'
 local yellow         = '#cfcfbf'
 local orange         = '#b4b4b4'
+local orange_light   = '#c2b0b0'
 local purple         = '#b9a3eb'
 local cyan_dark      = '#89bbdd'
 local cyan           = '#89ddff'
@@ -228,6 +229,7 @@ local plugin_syntax = {
   TSInclude              = { fg = cyan_dark },
   TSTag                  = { fg = blue_light },
   TSTagDelimiter         = { fg = cyan },
+  TSSymbol               = { fg = orange_light },
   -- TSAnnotation = {},
   TSVariable = { fg = fg_light },
   TSVariableBuiltin = { fg = orange },
