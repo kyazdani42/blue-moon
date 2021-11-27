@@ -87,7 +87,7 @@ local editor_syntax = {
 
   -- lsp
   DiagnosticError = { fg = red, gui = 'bold', bg = util.darken(red, 0.1) },
-  DiagnosticWarning = { fg = orange, gui ='bold', bg = util.darken(orange, 0.1) },
+  DiagnosticWarn = { fg = orange, gui ='bold', bg = util.darken(orange, 0.1) },
   DiagnosticInfo = { fg = yellow, gui = 'bold', bg = util.darken(yellow, 0.1) },
   DiagnosticHint = { fg = green, gui = 'bold', bg = util.darken(green, 0.1) },
 
