@@ -243,6 +243,15 @@ local plugin_syntax = {
   -- TSTitle                = {},
   -- TSLiteral              = {},
   -- TSURI                  = {},
+
+  -- nvim-cmp
+  CmpItemAbbr = { fg = white },
+  CmpItemAbbrDeprecated = { fg = red },
+  CmpItemAbbrMatch = { fg = white },
+  CmpItemAbbrMatchFuzzy = { fg = cyan },
+  -- TODO: not sure where this goes
+  CmpItemKind = { fg = cyan, gui = 'bold' },
+  CmpItemMenu = { fg = cyan },
 }
 
 -- }}}
