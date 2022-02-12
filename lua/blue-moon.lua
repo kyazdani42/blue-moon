@@ -231,7 +231,7 @@ local plugin_syntax = {
   TSTagDelimiter         = { fg = cyan },
   TSSymbol               = { fg = orange_light },
   -- TSAnnotation = {},
-  TSVariable = { fg = fg_light },
+  TSVariable = { fg = "NONE" },
   TSVariableBuiltin = { fg = orange },
   -- TSDefinitionUsage = {},
   -- TSDefinition = {},
