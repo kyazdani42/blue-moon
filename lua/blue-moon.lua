@@ -261,7 +261,7 @@ local plugin_syntax = {
   NeotestFile = { fg = purple, gui = 'bold,italic' },
   NeotestFocused = { gui = 'bold,underline' },
   NeotestIndent = { fg = grey },
-  NeotestMarked = { fg = '#00ff40' }, -- TODO
+  NeotestMarked = { fg = green_high, gui = 'bold,italic,underline' },
   NeotestNamespace = { fg = purple },
   NeotestPassed = { fg = green_high },
   NeotestRunning = { fg = yellow },
