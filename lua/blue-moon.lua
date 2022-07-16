@@ -252,6 +252,24 @@ local plugin_syntax = {
   -- TODO: not sure where this goes
   CmpItemKind = { fg = cyan, gui = 'bold' },
   CmpItemMenu = { fg = cyan },
+
+  NeotestAdapterName = { fg = blue_light },
+  NeotestBorder = { fg = '#ffa000' }, -- TODO
+  NeotestDir = { fg = blue, gui = 'bold' },
+  NeotestExpandMarker = { fg = grey },
+  NeotestFailed = { fg = heavy_red },
+  NeotestFile = { fg = purple, gui = 'bold,italic' },
+  NeotestFocused = { gui = 'bold,underline' },
+  NeotestIndent = { fg = grey },
+  NeotestMarked = { fg = '#00ff40' }, -- TODO
+  NeotestNamespace = { fg = purple },
+  NeotestPassed = { fg = green_high },
+  NeotestRunning = { fg = yellow },
+  NeotestWinSelect = { fg = '#0022ff' }, -- TODO
+  NeotestSkipped = { fg = '#ff00ff' }, -- TODO
+  NeotestTarget = { fg = '#00ffff' }, -- TODO
+  NeotestTest = { fg = green },
+  NeotestUnknown = { fg = grey, gui = 'bold' },
 }
 
 -- }}}
