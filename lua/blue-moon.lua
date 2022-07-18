@@ -21,13 +21,13 @@ local bg_lighter     = '#444267'
 local grey           = '#8796b0'
 local grey_dark      = '#353b52'
 local red            = '#d06178'
--- local red_dimmed     = '#a05168'
 local heavy_red      = '#e61f44'
 local green          = '#b4c4b4'
 local green_high     = '#bcd9c4'
 local blue           = '#959dcb'
 local blue_light     = '#b8bcf3'
 local yellow         = '#cfcfbf'
+local yellow_light   = '#dfdf9f'
 local orange         = '#b4b4b4'
 local orange_light   = '#c2b0b0'
 local purple         = '#b9a3eb'
@@ -271,10 +271,16 @@ local plugin_syntax = {
   NeotestTest = { fg = green },
   NeotestUnknown = { fg = grey, gui = 'bold' },
 
-  NvimTreeLspDiagnosticsError = { guifg = red, gui = 'bold' },
-  NvimTreeLspDiagnosticsWarning = { guifg = orange, gui = 'bold' },
-  NvimTreeLspDiagnosticsInformation = { guifg = yellow, gui = 'bold' },
-  NvimTreeLspDiagnosticsHint = { guifg = green, gui = 'bold' },
+  NvimTreeLspDiagnosticsError = { fg = red, gui = 'bold' },
+  NvimTreeLspDiagnosticsWarning = { fg = orange, gui = 'bold' },
+  NvimTreeLspDiagnosticsInformation = { fg = yellow, gui = 'bold' },
+  NvimTreeLspDiagnosticsHint = { fg = green, gui = 'bold' },
+
+  GitSignsAdd = { fg = green_high },
+  GitSignsChange = { fg = orange_light },
+  GitSignsDelete = { fg = heavy_red },
+  GitSignsTopDelete = { fg = heavy_red },
+  GitSignsChangeDelete = { fg = yellow_light },
 }
 
 -- }}}
