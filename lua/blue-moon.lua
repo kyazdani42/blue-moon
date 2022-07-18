@@ -270,6 +270,11 @@ local plugin_syntax = {
   NeotestTarget = { fg = '#00ffff' }, -- TODO
   NeotestTest = { fg = green },
   NeotestUnknown = { fg = grey, gui = 'bold' },
+
+  NvimTreeLspDiagnosticsError = { guifg = red, gui = 'bold' },
+  NvimTreeLspDiagnosticsWarning = { guifg = orange, gui = 'bold' },
+  NvimTreeLspDiagnosticsInformation = { guifg = yellow, gui = 'bold' },
+  NvimTreeLspDiagnosticsHint = { guifg = green, gui = 'bold' },
 }
 
 -- }}}
