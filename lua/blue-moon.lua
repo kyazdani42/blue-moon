@@ -196,7 +196,7 @@ local plugin_syntax = {
 
   ['@punctuation.delimiter'] = { fg = white },
   ['@punctuation.bracket']   = { fg = cyan_dark },
-  ['@punctuation.sepcial']   = { fg = cyan },
+  ['@punctuation.special']   = { fg = cyan },
 
   ['@constant']         = { fg = yellow },
   ['@constant.builtin'] = { fg = orange },
