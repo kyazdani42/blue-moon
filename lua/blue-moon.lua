@@ -256,6 +256,10 @@ local plugin_syntax = {
   ['@variable']         = { fg = "NONE" },
   ['@variable.builtin'] = { fg = orange },
 
+  ['@text.title'] = { gui = 'bold,underline' },
+  ['@text.reference'] = { fg = cyan },
+  ['@text.uri'] = { gui = 'underline', fg = green },
+
   -- nvim-cmp
   CmpItemAbbr = { fg = white },
   CmpItemAbbrDeprecated = { fg = red },
