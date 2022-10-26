@@ -259,6 +259,7 @@ local plugin_syntax = {
   ['@text.title'] = { gui = 'bold,underline' },
   ['@text.reference'] = { fg = cyan },
   ['@text.uri'] = { gui = 'underline', fg = green },
+  ['@text.warning'] = { fg = purple, gui = 'bold' },
 
   -- nvim-cmp
   CmpItemAbbr = { fg = white },
