@@ -6,12 +6,8 @@ local M = {}
 
 -- Highlight Function And Color definitons {{{
 
-local function highlight(group, styles)
-  local gui = styles.gui and 'gui='..styles.gui or 'gui=NONE'
-  local sp = styles.sp and 'guisp='..styles.sp or 'guisp=NONE'
-  local fg = styles.fg and 'guifg='..styles.fg or 'guifg=NONE'
-  local bg = styles.bg and 'guibg='..styles.bg or 'guibg=NONE'
-  vim.api.nvim_command('highlight! '..group..' '..gui..' '..sp..' '..fg..' '..bg)
+local function highlight(group, opts)
+  vim.api.nvim_set_hl(0, group, opts)
 end
 
 local bg_dark        = '#1b1e2b'
@@ -48,59 +44,59 @@ local editor_syntax = {
   ColorColumn  = { bg = bg_light },
   CursorLine   = { bg = bg },
   Cursor       = { fg = bg_dark, bg = yellow },
-  Directory    = { fg = blue, gui = 'bold' },
+  Directory    = { fg = blue, bold = true },
   DiffAdd      = { fg = green },
   DiffChange   = { fg = yellow },
   DiffDelete   = { fg = red },
   DiffText     = { fg = blue },
   EndOfBuffer  = { bg = bg_dark, fg = bg_dark },
-  ErrorMsg     = { fg = red, gui = 'bold' },
+  ErrorMsg     = { fg = red, bold = true },
   VertSplit    = { bg = bg_dark, fg = bg },
-  Folded       = { fg = fg_dark, gui = 'italic' },
+  Folded       = { fg = fg_dark, italic = true },
   FoldColumn   = { fg = yellow },
   SignColumn   = { fg = yellow },
   IncSearch    = { bg = yellow, fg = bg },
   Substitute   = { bg = blue, fg = bg },
   LineNr       = { fg = fg_dark },
   CursorLineNr = { fg = fg },
-  MatchParen   = { fg = cyan, gui = 'bold' },
+  MatchParen   = { fg = cyan, bold = true },
   Normal       = { fg = fg_light, bg = bg_dark },
   NormalFloat  = { bg = grey_dark, fg = white },
   Pmenu        = { bg = grey_dark, fg = fg_light },
-  PmenuSel     = { bg = cyan, fg = bg_lighter, gui = 'bold' },
+  PmenuSel     = { bg = cyan, fg = bg_lighter, bold = true },
   PmenuSbar    = { bg = bg_lighter },
   PmenuThumb   = { bg = fg },
   Search       = { bg = hollow },
   SpecialKey   = { bg = bg_light },
-  SpellBad     = { gui = 'undercurl', sp = red },
-  SpellCap     = { gui = 'undercurl', sp = yellow },
-  SpellLocal   = { gui = 'undercurl', sp = orange },
-  SpellRare    = { gui = 'undercurl', sp = blue },
+  SpellBad     = { undercurl = true, sp = red },
+  SpellCap     = { undercurl = true, sp = yellow },
+  SpellLocal   = { undercurl = true, sp = orange },
+  SpellRare    = { undercurl = true, sp = blue },
   TabLine      = { bg = bg_dark, fg = fg_light },
   TabLineFill  = { bg = bg_dark, fg = fg_light },
-  TabLineSel   = { bg = cyan, fg = bg_dark, gui = 'bold'},
+  TabLineSel   = { bg = cyan, fg = bg_dark, bold = true},
   Title        = { fg = green },
   Visual       = { bg = hollow_lighter },
   VisualNOS    = { bg = hollow_lighter },
-  WarningMsg   = { fg = yellow, gui = 'italic' },
+  WarningMsg   = { fg = yellow, italic = true },
   Whitespace   = { bg = yellow }, -- TODO: i don't know where this is
 
   -- lsp
-  DiagnosticError = { fg = red, gui = 'bold', bg = util.darken(red, 0.1) },
-  DiagnosticWarn = { fg = orange, gui ='bold', bg = util.darken(orange, 0.1) },
-  DiagnosticInfo = { fg = yellow, gui = 'bold', bg = util.darken(yellow, 0.1) },
-  DiagnosticHint = { fg = green, gui = 'bold', bg = util.darken(green, 0.1) },
+  DiagnosticError = { fg = red, bold = true, bg = util.darken(red, 0.1) },
+  DiagnosticWarn = { fg = orange, bold = true, bg = util.darken(orange, 0.1) },
+  DiagnosticInfo = { fg = yellow, bold = true, bg = util.darken(yellow, 0.1) },
+  DiagnosticHint = { fg = green, bold = true, bg = util.darken(green, 0.1) },
 
-  DiagnosticUnderlineError   = { gui = 'undercurl', sp = red },
-  DiagnosticUnderlineWarn = { gui = 'undercurl', sp = yellow },
-  DiagnosticUnderlineInfo = { gui = 'undercurl', sp = green_high },
-  DiagnosticUnderlineHint = { gui = 'undercurl', sp = green },
+  DiagnosticUnderlineError   = { undercurl = true, sp = red },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = yellow },
+  DiagnosticUnderlineInfo = { undercurl = true, sp = green_high },
+  DiagnosticUnderlineHint = { undercurl = true, sp = green },
 
   -- git highlighting
-  gitcommitComment        = { fg = fg_dark, gui = 'italic' },
-  gitcommitUntracked      = { fg = fg_dark, gui = 'italic' },
-  gitcommitDiscarded      = { fg = fg_dark, gui = 'italic' },
-  gitcommitSelected       = { fg = fg_dark, gui = 'italic' },
+  gitcommitComment        = { fg = fg_dark, italic = true },
+  gitcommitUntracked      = { fg = fg_dark, italic = true },
+  gitcommitDiscarded      = { fg = fg_dark, italic = true },
+  gitcommitSelected       = { fg = fg_dark, italic = true },
   gitcommitUnmerged       = { fg = green },
   gitcommitBranch         = { fg = purple },
   gitcommitNoBranch       = { fg = purple },
@@ -138,22 +134,22 @@ local editor_syntax = {
 -- Vim Default Code Syntax {{{
 
 local code_syntax = {
-  Comment        = { fg = fg_dark, gui = 'italic' },
+  Comment        = { fg = fg_dark, italic = true },
   Constant       = { fg = cyan },
   String         = { fg = green },
-  Character      = { fg = green, gui = 'bold' },
+  Character      = { fg = green, bold = true },
   Number         = { fg = orange },
   Float          = { fg = orange },
   Boolean        = { fg = orange },
 
   Identifier     = { fg = heavy_red },
-  Function       = { fg = blue, gui = 'italic' },
+  Function       = { fg = blue, italic = true },
 
-  Statement      = { fg = blue_light, gui = 'italic' },
-  Conditional    = { fg = blue, gui = 'italic' },
-  Repeat         = { fg = blue, gui = 'italic' },
-  Label          = { fg = blue, gui = 'italic' },
-  Exception      = { fg = blue, gui = 'italic' },
+  Statement      = { fg = blue_light, italic = true },
+  Conditional    = { fg = blue, italic = true },
+  Repeat         = { fg = blue, italic = true },
+  Label          = { fg = blue, italic = true },
+  Exception      = { fg = blue, italic = true },
   Operator       = { fg = blue },
   Keyword        = { fg = heavy_red },
 
@@ -171,14 +167,14 @@ local code_syntax = {
   Special        = { fg = blue },
   SpecialChar    = {},
   Tag            = { fg = orange },
-  SpecialComment = { fg = fg_dark, gui = 'bold' },
+  SpecialComment = { fg = fg_dark, bold = true },
   Debug          = {},
   Delimiter      = {},
 
   Ignore         = {},
-  Underlined     = { gui = 'underline' },
+  Underlined     = { underline = true },
   Error          = { fg = heavy_red },
-  Todo           = { fg = purple, gui = 'bold' },
+  Todo           = { fg = purple, bold = true },
 }
 
 -- }}}
@@ -225,15 +221,15 @@ local plugin_syntax = {
   ['@field']                = { fg = blue_light },
   ['@property']             = { fg = blue_light },
 
-  ['@conditional']          = { fg = blue, gui = 'italic' },
-  ['@repeat']               = { fg = blue, gui = 'italic' },
-  ['@exception']            = { fg = blue, gui = 'italic' },
-  ['@label']                = { fg = cyan_dark, gui = 'italic' },
-  ['@debug']                = { fg = cyan_dark, gui = 'italic' },
+  ['@conditional']          = { fg = blue, italic = true },
+  ['@repeat']               = { fg = blue, italic = true },
+  ['@exception']            = { fg = blue, italic = true },
+  ['@label']                = { fg = cyan_dark, italic = true },
+  ['@debug']                = { fg = cyan_dark, italic = true },
   ['@include']              = { fg = cyan_dark },
 
   ['@operator'] = { fg = cyan },
-  ['@comment']  = { fg = fg_dark, gui = 'italic' },
+  ['@comment']  = { fg = fg_dark, italic = true },
   ['@error']    = {},
   ['@preproc']  = { fg = yellow },
   ['@define']   = { fg = purple },
@@ -253,13 +249,13 @@ local plugin_syntax = {
   ['@tag.attribute'] = { fg = blue_light },
 
   ['@symbol']           = { fg = orange_light },
-  ['@variable']         = { fg = "NONE" },
+  ['@variable']         = {},
   ['@variable.builtin'] = { fg = orange },
 
-  ['@text.title'] = { gui = 'bold,underline' },
+  ['@text.title'] = { bold = true, underline = true },
   ['@text.reference'] = { fg = cyan },
-  ['@text.uri'] = { gui = 'underline', fg = green },
-  ['@text.warning'] = { fg = purple, gui = 'bold' },
+  ['@text.uri'] = { underline = true, fg = green },
+  ['@text.warning'] = { fg = purple, bold = true },
 
   -- nvim-cmp
   CmpItemAbbr = { fg = white },
@@ -267,18 +263,18 @@ local plugin_syntax = {
   CmpItemAbbrMatch = { fg = white },
   CmpItemAbbrMatchFuzzy = { fg = cyan },
   -- TODO: not sure where this goes
-  CmpItemKind = { fg = cyan, gui = 'bold' },
+  CmpItemKind = { fg = cyan, bold = true },
   CmpItemMenu = { fg = cyan },
 
   NeotestAdapterName = { fg = blue_light },
   NeotestBorder = { fg = '#ffa000' }, -- TODO
-  NeotestDir = { fg = blue, gui = 'bold' },
+  NeotestDir = { fg = blue, bold = true },
   NeotestExpandMarker = { fg = grey },
   NeotestFailed = { fg = heavy_red },
-  NeotestFile = { fg = purple, gui = 'bold,italic' },
-  NeotestFocused = { gui = 'bold,underline' },
+  NeotestFile = { fg = purple, bold = true, italic = true },
+  NeotestFocused = { bold = true, underline = true },
   NeotestIndent = { fg = grey },
-  NeotestMarked = { fg = green_high, gui = 'bold,italic,underline' },
+  NeotestMarked = { fg = green_high, bold = true, italic = true, underline = true },
   NeotestNamespace = { fg = purple },
   NeotestPassed = { fg = green_high },
   NeotestRunning = { fg = yellow },
@@ -286,12 +282,12 @@ local plugin_syntax = {
   NeotestSkipped = { fg = '#ff00ff' }, -- TODO
   NeotestTarget = { fg = '#00ffff' }, -- TODO
   NeotestTest = { fg = green },
-  NeotestUnknown = { fg = grey, gui = 'bold' },
+  NeotestUnknown = { fg = grey, bold = true },
 
-  NvimTreeLspDiagnosticsError = { fg = red, gui = 'bold' },
-  NvimTreeLspDiagnosticsWarning = { fg = orange, gui = 'bold' },
-  NvimTreeLspDiagnosticsInformation = { fg = yellow, gui = 'bold' },
-  NvimTreeLspDiagnosticsHint = { fg = green, gui = 'bold' },
+  NvimTreeLspDiagnosticsError = { fg = red, bold = true },
+  NvimTreeLspDiagnosticsWarning = { fg = orange, bold = true },
+  NvimTreeLspDiagnosticsInformation = { fg = yellow, bold = true },
+  NvimTreeLspDiagnosticsHint = { fg = green, bold = true },
 
   GitSignsAdd = { fg = green_high },
   GitSignsChange = { fg = orange_light },
