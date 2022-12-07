@@ -227,6 +227,7 @@ local plugin_syntax = {
   ['@label']                = { fg = cyan_dark, italic = true },
   ['@debug']                = { fg = cyan_dark, italic = true },
   ['@include']              = { fg = cyan_dark },
+  ['@namespace']            = { fg = yellow },
 
   ['@operator'] = { fg = cyan },
   ['@comment']  = { fg = fg_dark, italic = true },
