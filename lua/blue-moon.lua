@@ -92,6 +92,23 @@ local editor_syntax = {
   DiagnosticUnderlineInfo = { undercurl = true, sp = green_high },
   DiagnosticUnderlineHint = { undercurl = true, sp = green },
 
+  -- TODO: maybe implement this at some point, disable for now
+  ['@lsp.type.class'] = {},
+  ['@lsp.type.decorator'] = {},
+  ['@lsp.type.enum'] = {},
+  ['@lsp.type.enumMember'] = {},
+  ['@lsp.type.function'] = {},
+  ['@lsp.type.interface'] = {},
+  ['@lsp.type.macro'] = {},
+  ['@lsp.type.method'] = {},
+  ['@lsp.type.namespace'] = {},
+  ['@lsp.type.parameter'] = {},
+  ['@lsp.type.property'] = {},
+  ['@lsp.type.struct'] = {},
+  ['@lsp.type.type'] = {},
+  ['@lsp.type.typeParameter'] = {},
+  ['@lsp.type.variable'] = {},
+
   -- git highlighting
   gitcommitComment        = { fg = fg_dark, italic = true },
   gitcommitUntracked      = { fg = fg_dark, italic = true },
