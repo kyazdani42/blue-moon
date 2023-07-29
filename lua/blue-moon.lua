@@ -61,7 +61,9 @@ local editor_syntax = {
   CursorLineNr = { fg = fg },
   MatchParen   = { fg = cyan, bold = true },
   Normal       = { fg = fg_light, bg = bg_dark },
-  NormalFloat  = { bg = grey_dark, fg = white },
+  NormalFloat  = { bg = bg_dark },
+  FloatBorder  = { fg = bg_light },
+  FloatTitle   = { bg = bg_dark, fg = fg_light },
   Pmenu        = { bg = grey_dark, fg = fg_light },
   PmenuSel     = { bg = cyan, fg = bg_lighter, bold = true },
   PmenuSbar    = { bg = bg_lighter },
@@ -86,11 +88,13 @@ local editor_syntax = {
   DiagnosticWarn = { fg = orange, bold = true, bg = util.darken(orange, 0.1) },
   DiagnosticInfo = { fg = yellow, bold = true, bg = util.darken(yellow, 0.1) },
   DiagnosticHint = { fg = green, bold = true, bg = util.darken(green, 0.1) },
+  DiagnosticOk   = { fg = green_high, bold = true, bg = util.darken(green_high, 0.1) },
 
   DiagnosticUnderlineError   = { undercurl = true, sp = red },
-  DiagnosticUnderlineWarn = { undercurl = true, sp = yellow },
-  DiagnosticUnderlineInfo = { undercurl = true, sp = green_high },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = orange },
+  DiagnosticUnderlineInfo = { undercurl = true, sp = yellow },
   DiagnosticUnderlineHint = { undercurl = true, sp = green },
+  DiagnosticUnderlineOk = { undercurl = true, sp = green_high },
 
   -- TODO: maybe implement this at some point, disable for now
   ['@lsp.type.class'] = {},
