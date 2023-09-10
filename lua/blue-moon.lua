@@ -311,6 +311,9 @@ local plugin_syntax = {
   NvimTreeLspDiagnosticsInformation = { fg = yellow, bold = true },
   NvimTreeLspDiagnosticsHint = { fg = green, bold = true },
 
+  NvimTreeFolderArrowClosed = { fg = grey },
+  NvimTreeFolderArrowOpen = { fg = grey },
+
   GitSignsAdd = { fg = green_high },
   GitSignsChange = { fg = orange_light },
   GitSignsDelete = { fg = heavy_red },
