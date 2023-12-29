@@ -82,6 +82,7 @@ local editor_syntax = {
   VisualNOS    = { bg = hollow_lighter },
   WarningMsg   = { fg = yellow, italic = true },
   Whitespace   = { bg = yellow }, -- TODO: i don't know where this is
+  WinSeparator = { fg = bg },
 
   -- lsp
   DiagnosticError = { fg = red, bold = true, bg = util.darken(red, 0.1) },
