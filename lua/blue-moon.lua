@@ -20,6 +20,7 @@ local red            = '#d06178'
 local heavy_red      = '#e61f44'
 local green          = '#b4c4b4'
 local green_high     = '#bcd9c4'
+local heavy_green    = '#acfab4'
 local blue           = '#959dcb'
 local blue_light     = '#b8bcf3'
 local yellow         = '#cfcfbf'
@@ -220,42 +221,41 @@ local plugin_syntax = {
   ['@constant.builtin'] = { fg = orange },
   ['@constant.macro']   = { fg = yellow },
 
-  ['@string']         = { fg = green },
-  ['@string.regex']   = { fg = cyan_dark },
-  ['@string.escape']  = { fg = cyan_dark },
-  ['@string.special'] = { fg = cyan },
+  ['@string']        = { fg = green },
+  ['@string.regexp'] = { fg = cyan_dark },
+  ['@string.escape'] = { fg = cyan_dark },
 
-  ['@number']               = { fg = orange },
-  ['@boolean']              = { fg = orange },
-  ['@float']                = { fg = orange },
+  ['@number']       = { fg = orange },
+  ['@boolean']      = { fg = orange },
+  ['@number.float'] = { fg = orange },
 
   ['@function']         = { fg = blue_light },
   ['@function.call']    = { fg = blue_light },
   ['@function.builtin'] = { fg = purple },
   ['@function.macro']   = { fg = orange },
 
-  ['@parameter']   = { fg = white },
-  ['@constructor'] = { fg = yellow },
+  ['@variable.parameter'] = { fg = white },
+  ['@constructor']        = { fg = yellow },
 
-  ['@method']      = { fg = blue_light },
-  ['@method.call'] = { fg = blue_light },
+  ['@function.method']      = { fg = blue_light },
+  ['@function.method.call'] = { fg = blue_light },
 
-  ['@field']                = { fg = blue_light },
+  ['@variable.member']      = { fg = blue_light },
   ['@property']             = { fg = blue_light },
 
-  ['@conditional']          = { fg = blue, italic = true },
-  ['@repeat']               = { fg = blue, italic = true },
-  ['@exception']            = { fg = blue, italic = true },
+  ['@keyword.conditional']  = { fg = blue, italic = true },
+  ['@keyword.repeat']       = { fg = blue, italic = true },
+  ['@keyword.exception']    = { fg = blue, italic = true },
   ['@label']                = { fg = cyan_dark, italic = true },
-  ['@debug']                = { fg = cyan_dark, italic = true },
-  ['@include']              = { fg = cyan_dark },
-  ['@namespace']            = { fg = yellow },
+  ['@keyword.debug']        = { fg = cyan_dark, italic = true },
+  ['@keyword.import']       = { fg = cyan_dark },
+  ['@module']               = { fg = yellow },
 
   ['@operator'] = { fg = cyan },
   ['@comment']  = { fg = fg_dark, italic = true },
-  ['@error']    = {},
-  ['@preproc']  = { fg = yellow },
-  ['@define']   = { fg = purple },
+
+  ['@keyword.directive']        = { fg = yellow },
+  ['@keyword.directive.define'] = { fg = purple },
 
   ['@keyword']          = { fg = blue },
   ['@keyword.function'] = { fg = blue_light },
@@ -271,14 +271,21 @@ local plugin_syntax = {
   ['@tag.delimiter'] = { fg = cyan },
   ['@tag.attribute'] = { fg = blue_light },
 
-  ['@symbol']           = { fg = orange_light },
-  ['@variable']         = {},
-  ['@variable.builtin'] = { fg = orange },
+  ['@string.special.symbol'] = { fg = orange_light },
+  ['@variable']              = {},
+  ['@variable.builtin']      = { fg = orange },
 
-  ['@text.title'] = { bold = true, underline = true },
-  ['@text.reference'] = { fg = cyan },
-  ['@text.uri'] = { underline = true, fg = green },
-  ['@text.warning'] = { fg = purple, bold = true },
+  ['@markup.heading'] = { bold = true, underline = true },
+  ['@markup.link'] = { fg = cyan },
+  ['@markup.link.url'] = { underline = true, fg = green },
+  ['@string.special.url'] = { underline = true, fg = green },
+  ['@markup.link.label'] = { fg = cyan },
+  ['@markup.list']   = { fg = cyan },
+  ['@comment.warning'] = { fg = purple, bold = true },
+
+  ['@diff.plus'] = { bg = util.darken(heavy_green, 0.3) },
+  ['@diff.minus'] = { bg = util.darken(heavy_red, 0.3) },
+  ['@diff.delta'] = { bg = util.darken(purple, 0.3) },
 
   -- nvim-cmp
   CmpItemAbbr = { fg = white },
