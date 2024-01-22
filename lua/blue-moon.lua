@@ -321,6 +321,18 @@ local plugin_syntax = {
 
   NvimTreeFolderArrowClosed = { fg = grey },
   NvimTreeFolderArrowOpen = { fg = grey },
+  NvimTreeRootFolder = { fg = purple },
+  NvimTreeSpecialFile = { fg = yellow, bold = true, underline = true },
+  NvimTreeExecFile = { fg = green, bold = true },
+  NvimTreeSymlink = { fg = cyan, bold = true },
+
+  NvimTreeGitDeletedIcon = { fg = red },
+  NvimTreeGitDirtyIcon = { fg = red },
+  NvimTreeGitRenamedIcon = { fg = purple },
+  NvimTreeGitNewIcon = { fg = yellow },
+  NvimTreeGitStagedIcon = { fg = green },
+  NvimTreeGitMergeIcon = { fg = yellow },
+  NvimTreeGitIgnoredIcon = { fg = grey },
 
   GitSignsAdd = { fg = green_high },
   GitSignsChange = { fg = orange_light },
