@@ -82,7 +82,7 @@ local editor_syntax = {
   Visual       = { bg = hollow_lighter },
   VisualNOS    = { bg = hollow_lighter },
   WarningMsg   = { fg = yellow, italic = true },
-  Whitespace   = { bg = yellow }, -- TODO: i don't know where this is
+  Whitespace   = { bg = bg_dark },
   WinSeparator = { fg = bg },
 
   -- lsp
