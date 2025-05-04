@@ -84,6 +84,7 @@ local editor_syntax = {
   WarningMsg   = { fg = yellow, italic = true },
   Whitespace   = { bg = bg_dark },
   WinSeparator = { fg = bg },
+  WinBar = { bg = bg_dark, fg = fg },
 
   -- lsp
   DiagnosticError = { fg = red, bold = true, bg = util.darken(red, 0.1) },
